@@ -1,0 +1,34 @@
+<p>topic-type works!</p>
+<div>
+  หน้าประหัวข้อ
+</div>
+
+<table border="1" width="800px">
+  <thead>
+  <tr >
+    <th>ประเภท</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let o of topicType">
+    <td align="center">{{o.topicTypeName}}</td>
+    <td align="center">
+      <button (click)="onEdit(o)">Edit</button>
+      <button (click)="onDelete(o.topicTypeId)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+  <button (click)="onclickAdd()">ADD</button>
+
+
+  <div *ngIf="showForm">
+    <div>
+      <label>ประเภท</label>
+    </div>
+    <input [(ngModel)]="formTopicType.topicTypeName"/>
+    <br/>
+    <button (click)="onSave()">save</button>
+  </div>
